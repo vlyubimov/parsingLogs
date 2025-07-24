@@ -23,3 +23,8 @@ pip install -r requirements.txt
 ```bash
 python main.py --file logs/api.log --report average --date 2025-06-22
 ```
+## Example 1
+![Example 1](example1.png)
+
+## Example 2
+![Example 2](example2.png)
