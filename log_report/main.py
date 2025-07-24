@@ -1,9 +1,9 @@
 import argparse
 import sys
 
-from reports import get_report
+from log_report.reports import get_report
 from tabulate import tabulate
-from utils.parser import parse_logs
+from log_report.utils.parser import parse_logs
 
 
 def main():
@@ -28,6 +28,8 @@ def main():
 
     try:
         logs = parse_logs(args.file, args.date)
+        if not logs:
+            print("There are no suitable logs to report.")
         report_func = get_report(args.report)
         report_data = report_func(logs)
         print(tabulate(report_data, headers="keys"))
